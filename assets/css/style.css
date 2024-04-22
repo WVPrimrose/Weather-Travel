@@ -1,0 +1,134 @@
+body {
+    background-color: #9bec9f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    height: 100vh;
+    margin: 0;
+
+}
+
+header {
+    text-align: center;
+    max-width: 400px;
+    padding: 5px;
+    border-radius: 30px;    
+    box-shadow: 0 1px 100px #073f00;
+    border: 2px solid #021651;
+    
+}
+
+h1 {
+    background-color: #5dff58;
+    font-size: 50px;
+    border-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #021651;
+
+}
+
+h2{
+    border:#003800 3px solid;
+    padding: 20px;
+    box-shadow: 2px 5px 25px #021651;
+    border-radius: 30px;
+}
+
+label, p {
+    display: block;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;   
+}
+
+
+input {
+    width: calc(100% - 16px);
+    padding: 8px;
+    box-sizing: border-box;
+    margin: auto;
+    border-radius: 20px;
+    border: 1px solid #000f3b;
+    margin-top: 30px;
+}
+
+footer {
+    background-color:#003800;
+        color: white;
+        padding: 20px;
+        bottom: 0;
+        width: 100%;
+    
+}
+
+#form{
+    text-align: center;
+}
+
+#search {
+    background-color: #6283e4;
+    color: #003800;
+    padding: 10px;
+    border: 5px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100px;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 200;
+    font-weight: 600;
+}
+
+#search:hover {
+    background-color:#38c4db;
+}
+
+#search:focus {
+    box-shadow: 1px 1px 20px 10px #003800;
+}
+
+#search:active {
+    box-shadow: 1px 1px 20px 10px #eeff00;
+    color: #eeff00;
+    background-color:#ffffff;
+}
+
+#weather-container {
+    text-align: center; 
+    width: 100%; 
+    margin-top: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.card {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    width: 80%; 
+    max-width: 600px; 
+    padding: 20px;
+}
+
+.card-body {
+    text-align: center; 
+}
+
+.card-title {
+    font-size: 24px; 
+    color: #333; 
+    margin-top: 10px; 
+}
+
+.card-text {
+    font-size: 16px; 
+    color: #666; 
+    margin: 5px 0; 
+}
+
+
