@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Travel</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Weather Travel</h1>
+    </header>
+    <main>
+        <form action="/submit-form" method="post">
+        <h2>See the forecast in any City!</h2>
+        <label for="City-Input">Search a City</label>
+        <input type="text"id="City-Input" placeholder="Enter City" name="Name" required>
+        <div id="weather-container"> 
+            
+            <div id="weather-info"> </div>
+            <div id="temperature"> </div>
+        </div>
+    </form>
+    </main>
+    <footer>
+        <p>Enjoy the weather!</p>
+    </footer>
+<script src="assets/js/script.js"></script>   
+</body>
+</html>
