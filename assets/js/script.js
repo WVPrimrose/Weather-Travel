@@ -2,10 +2,13 @@ const APIkey = "3fa84feb1f3c2594bd2063cc9c508894"
 const error = "Please Enter Valid City"
 const search = document.getElementById('submit');
 
-// This function occurs after user searches the weather by city
+// Adds event listener when user clicks the search button
+search.addEventListener('click', searchWeather)
+
+// This function occurs after user clicks search
 function searchWeather(event) {
     event.preventDefault();
-
+    
     const weatherURL = 'https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}';
     fetch(weatherURL)
 
@@ -26,7 +29,7 @@ function generateWeather() {
 
        const forecastCard = document.createElement('div');
        const forecastCardBody = document.createElement('div');
-       const day = document.createElement('h3');
+       const day = document.createElement('h3').textContent()
        const description = document.createElement('h3');
        const img = document.createElement('img');
        img.setAttribute('src', weatherImg)
