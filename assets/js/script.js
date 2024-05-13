@@ -1,6 +1,6 @@
 const APIkey = "3fa84feb1f3c2594bd2063cc9c508894"
 const error = "Please Enter Valid City"
-const search = document.getElementById('submit');
+const search = document.getElementById('search');
 const forecast = document.getElementById('weather-container')
 
 
@@ -21,8 +21,6 @@ function searchWeather(event) {
 
     })   
 }
-// Adds event listener when user clicks the search button
-search.addEventListener('click', searchWeather);
 
 // This function generates the 5-day forecast
 function generateWeather() {
@@ -45,3 +43,6 @@ function generateWeather() {
         
     }
 }
+
+// Adds event listener when user clicks the search button
+search.addEventListener('click', searchWeather);
