@@ -7,9 +7,9 @@ const forecast = document.getElementById('weather-container')
 // This function occurs after user clicks search
 function searchWeather(event) {
     event.preventDefault();
-    let cityname;
+    const city = document.getElementById('City-Input');
     
-    const weatherURL = 'https://api.openweathermap.org/data/2.5/weather?q={cityname}&appid={APIkey}';
+    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;
     fetch(weatherURL)
 
     .then(function (response) {
