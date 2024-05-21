@@ -19,10 +19,9 @@ function searchWeather(event) {
     .catch (function (error) {
     return('Error: $(error)')
 
-    }); 
-    console.log(searchWeather);  
+    });     
 }
-searchWeather()
+console.log(searchWeather);
 
 // This function generates the 5-day forecast
 function generateWeather() {
