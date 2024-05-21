@@ -7,20 +7,22 @@ const forecast = document.getElementById('weather-container')
 // This function occurs after user clicks search
 function searchWeather(event) {
     event.preventDefault();
-    const city = document.getElementById('City-Input');
-    
+    let city = document.getElementById('City-Input').value;
+
     const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;
     fetch(weatherURL)
 
     .then(function (response) {
-    return response.json();
+    return response.json()
     })
 
     .catch (function (error) {
     return('Error: $(error)')
 
-    })   
+    }); 
+    console.log(searchWeather);  
 }
+searchWeather()
 
 // This function generates the 5-day forecast
 function generateWeather() {
@@ -43,6 +45,7 @@ function generateWeather() {
         
     }
 }
+generateWeather()
 
 // Adds event listener when user clicks the search button
 search.addEventListener('click', searchWeather);
