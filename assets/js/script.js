@@ -24,10 +24,9 @@ function searchWeather(event) {
 console.log(searchWeather);
 
 // This function generates the 5-day forecast
-function generateWeather() {
+function generateWeather(searchWeather) {
     for (let i = 0; i < 5; i++) {
         const weatherImg = `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`;
-
        const forecastCard = document.createElement('div');
        const forecastCardBody = document.createElement('div');
        const day = document.createElement('h3').textContent()
