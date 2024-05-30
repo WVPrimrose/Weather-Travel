@@ -8,34 +8,43 @@ const forecast = document.getElementById('weather-container')
 function searchWeather(event) {
     event.preventDefault();
     let city = document.getElementById('City-Input').value;
-
-    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;
+    console.log(city)
+    const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIkey}`;
     fetch(weatherURL)
 
     .then(function (response) {
+        console.log(response)
     return response.json()
     })
-
+    .then(function (data){
+        console.log(data)
+        generateWeather(data.list)
+    })
     .catch (function (error) {
-    return('Error: $(error)')
+    return(`Error: ${error}`)
 
     });     
 }
-console.log(searchWeather);
 
 // This function generates the 5-day forecast
 function generateWeather(searchWeather) {
-    for (let i = 0; i < 5; i++) {
-        const weatherImg = `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`;
+    console.log(searchWeather.length);
+    for (let i = 0; i < searchWeather.length; i+=8) {
+        console.log(searchWeather[i])
+        const weatherImg = `https://openweathermap.org/img/wn/${searchWeather[i].weather[0].icon}.png`;
        const forecastCard = document.createElement('div');
        const forecastCardBody = document.createElement('div');
-       const day = document.createElement('h3').textContent()
+       const day = document.createElement('h3')
+       day.textContent=""
        const description = document.createElement('h3');
        const img = document.createElement('img');
        img.setAttribute('src', weatherImg)
-       const temp = document.createElement('p').textContent('Temperature: F');
-       const windSpeed = document.createElement('p').textContent('Wind Speed: $');
-       const humidity = document.createElement('p').textContent('Humidity: $');
+       const temp = document.createElement('p')
+       temp.textContent='Temperature: F';
+       const windSpeed = document.createElement('p')
+       windSpeed.textContent= 'Wind Speed:'
+       const humidity = document.createElement('p')
+       humidity.textContent='Humidity: ';
        
         forecastCardBody.appendChild(day, description, img, temp, windSpeed, humidity);
         forecastCard.appendChild(forecastCardBody);
@@ -43,7 +52,6 @@ function generateWeather(searchWeather) {
         
     }
 }
-generateWeather()
 
 // Adds event listener when user clicks the search button
 search.addEventListener('click', searchWeather);
