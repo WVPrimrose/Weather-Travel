@@ -37,19 +37,19 @@ function generateWeather(searchWeather) {
        const day = document.createElement('h3')
        day.textContent=``
        const description = document.createElement('h3');
-       description.textContent = `${description}`
+       description.textContent = `${searchWeather[i].weather[0].description}`
        const img = document.createElement('img');
        img.setAttribute('src', weatherImg)
        const temp = document.createElement('p')
-       temp.textContent=`Temperture: ${weather.main.temp}`;
+       temp.textContent=`Temperture: ${searchWeather[i].main.temp}`;
        const windSpeed = document.createElement('p')
-       windSpeed.textContent= `Wind Speed: ${weather.wind.speed}`
+       windSpeed.textContent= `Wind Speed: ${searchWeather[i].wind.speed}`
        const humidity = document.createElement('p')
-       humidity.textContent=`Humidity: ${weather.main.humidity}`;
+       humidity.textContent=`Humidity: ${searchWeather[i].main.humidity}`;
        
-        forecastCardBody.appendChild(day, description, img, temp, windSpeed, humidity);
-        forecastCard.appendChild(forecastCardBody);
-        forecast.appendChild(forecastCard);
+        forecastCardBody.append(day, description, img, temp, windSpeed, humidity);
+        forecastCard.append(forecastCardBody);
+        forecast.append(forecastCard);
         
     }
 }
