@@ -8,8 +8,8 @@ const forecast = document.getElementById('weather-container')
 function searchWeather(event) {
     event.preventDefault();
     let city = document.getElementById('City-Input').value;
-    console.log(city)
     const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIkey}`;
+    savePreviousCity(city)
 
     $('#weather-container').empty();
     
@@ -38,7 +38,7 @@ function generateWeather(searchWeather) {
        const forecastCard = document.createElement('div');
        const forecastCardBody = document.createElement('div');
        const day = document.createElement('h3')
-       day.textContent = dayjs().format('MM DD')
+       day.textContent = dayjs(searchWeather[i].dt_txt).format('MM DD')
        const description = document.createElement('h3');
        description.textContent = `${searchWeather[i].weather[0].description}`
        const img = document.createElement('img');
@@ -56,15 +56,16 @@ function generateWeather(searchWeather) {
     }
 }
 
-function savePreviousCity(){
+function savePreviousCity(city){
     localStorage.setItem('city', JSON.stringify(city))
 }
 
 function renderPreviousCity() {
     const previousCity = JSON.parse(localStorage.getItem('city'))
+    console.log(renderPreviousCity)
+
 }
 
 // Adds event listener when user clicks the search button
 search.addEventListener('click', searchWeather);
-savePreviousCity()
 renderPreviousCity()
