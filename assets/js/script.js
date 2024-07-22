@@ -63,6 +63,11 @@ function savePreviousCity(city){
 
 function renderPreviousCity() {
     const previousCity = JSON.parse(localStorage.getItem('city'))
+    for (let i = 0; i < cityData.length; i++) {
+        const cityButton = document.createElement('button')
+        cityButton.textContent = cityData[i];
+        
+    }
     console.log(renderPreviousCity)
 
 }
