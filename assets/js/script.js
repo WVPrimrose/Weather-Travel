@@ -2,7 +2,7 @@ const APIkey = "3fa84feb1f3c2594bd2063cc9c508894"
 const error = "Please Enter Valid City"
 const search = document.getElementById('search');
 const forecast = document.getElementById('weather-container')
-
+let cityData =  JSON.parse(localStorage.getItem('city')) || []
 
 // This function occurs after user clicks search
 function searchWeather(event) {
@@ -57,7 +57,8 @@ function generateWeather(searchWeather) {
 }
 
 function savePreviousCity(city){
-    localStorage.setItem('city', JSON.stringify(city))
+    cityData.push(city)
+    localStorage.setItem('city', JSON.stringify(cityData))
 }
 
 function renderPreviousCity() {
